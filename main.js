@@ -33,7 +33,8 @@ function main() {
     function download() {
         var colorHex = $("#colorpicker").spectrum("get").toString().substring(1);
         var size = document.getElementById("size").value || 1000;
-        downloadLnk.download = 'heart-' + colorHex + '-' + size + '.png';
+        var padding = document.getElementById("padding").value || 0;
+        downloadLnk.download = 'heart-' + colorHex + '-' + size + '-' + padding + '.png';
         canvas.width = size;
         canvas.height = size;
         redraw();
